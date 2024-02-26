@@ -44,7 +44,7 @@
 }
 
 .read-more-btn {
-    border-radius: 20px;
+    border-radius: 4px;
     padding: 8px 20px;
     background-color: #007bff;
     color: white;
@@ -53,4 +53,11 @@
     &:hover {
         background-color: #0056b3;
     }
+}
+.close-btn {
+    margin-top: auto;
+    align-self: flex-end;
+    background-color: #ff5722;
+    color: #fff;
+    margin-top: 10px;
 }

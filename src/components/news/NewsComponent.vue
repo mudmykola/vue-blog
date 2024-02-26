@@ -18,7 +18,7 @@
         <v-img :src="selectedPost.image" height="400px" class="rounded-top"></v-img>
         <v-card-title>{{ selectedPost.title }}</v-card-title>
         <v-card-text>{{ selectedPost.content }}</v-card-text>
-        <v-card-actions>
+        <v-card-actions class="card-actions d-flex align-center justify-space-between px-4 py-1">
           <div class="like-dislike-buttons">
             <v-btn icon @click="like(selectedPost.id)">
               <v-icon :color="selectedPost.liked ? 'primary' : ''">mdi-thumb-up</v-icon>
@@ -29,7 +29,7 @@
             </v-btn>
             <span>{{ selectedPost.dislikes }}</span>
           </div>
-          <v-btn color="primary" text @click="closeModal">Close</v-btn>
+          <v-btn class="close-btn" color="white" text @click="closeModal">Close</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
