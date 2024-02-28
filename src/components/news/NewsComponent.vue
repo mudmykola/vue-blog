@@ -19,6 +19,8 @@
         <v-card-title>{{ selectedPost.title }}</v-card-title>
         <v-card-text>{{ selectedPost.content }}</v-card-text>
         <v-card-actions class="card-actions d-flex align-center justify-space-between px-4 py-1">
+
+
           <div class="like-dislike-buttons">
             <v-btn icon @click="like(selectedPost.id)">
               <v-icon :color="selectedPost.liked ? 'primary' : ''">mdi-thumb-up</v-icon>
@@ -28,6 +30,9 @@
               <v-icon :color="selectedPost.disliked ? 'primary' : ''">mdi-thumb-down</v-icon>
             </v-btn>
             <span>{{ selectedPost.dislikes }}</span>
+            <v-btn icon @click="toggleFavorite(selectedPost.id)">
+              <v-icon :color="selectedPost.favorite ? 'yellow' : ''">mdi-star</v-icon>
+            </v-btn>
           </div>
           <v-btn class="close-btn" color="white" text="text" @click="closeModal">Close</v-btn>
         </v-card-actions>
@@ -38,7 +43,7 @@
 
 <script setup>
 import { onMounted } from 'vue';
-import { posts, modal, selectedPost, fetchPosts, truncateText, openModal, closeModal, like, dislike } from './modalLogic';
+import { posts, modal, selectedPost, fetchPosts, truncateText, openModal, closeModal, like, dislike, toggleFavorite } from './modalLogic';
 
 onMounted(fetchPosts);
 </script>

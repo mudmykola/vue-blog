@@ -7,6 +7,9 @@ export const usePostsStore = defineStore({
     posts: [],
   }),
   actions: {
+    setPosts(posts) {
+      this.posts = posts;
+    },
     posts: undefined,
     addPost(post) {
       this.posts.push(post);
