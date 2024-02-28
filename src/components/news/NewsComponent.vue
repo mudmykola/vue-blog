@@ -29,7 +29,7 @@
             </v-btn>
             <span>{{ selectedPost.dislikes }}</span>
           </div>
-          <v-btn class="close-btn" color="white" text @click="closeModal">Close</v-btn>
+          <v-btn class="close-btn" color="white" text="text" @click="closeModal">Close</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>

@@ -18,7 +18,7 @@ const toggleDrawer = () => {
         <router-link class="text-decoration-none text-black" to="/">Vue Blog</router-link>
       </v-app-bar-title>
       <template v-slot:append>
-        <v-btn icon="mdi-heart"></v-btn>
+        <v-btn icon="mdi-heart-outline"></v-btn>
         <v-btn icon="mdi-magnify"></v-btn>
         <v-btn icon="mdi-dots-vertical"></v-btn>
       </template>
@@ -29,6 +29,9 @@ const toggleDrawer = () => {
         </v-list-item>
 
         <v-list-item class="font-weight-black" link to="/about" prepend-icon="mdi-account" title="About" value="about">
+        </v-list-item>
+
+        <v-list-item class="font-weight-black" link to="/favorite" prepend-icon="mdi-heart" title="Favorite" value="favorite">
         </v-list-item>
 
         <v-list-item class="font-weight-black" link to="/news" prepend-icon="mdi-post" title="News" value="news">
