@@ -1,13 +1,3 @@
-<script setup>
-import {ref} from 'vue';
-
-const drawer = ref(false);
-
-const toggleDrawer = () => {
-  drawer.value = !drawer.value;
-};
-</script>
-
 <template>
   <div class="navigation">
     <v-app-bar>
@@ -22,6 +12,7 @@ const toggleDrawer = () => {
         <v-btn icon="mdi-magnify"></v-btn>
         <v-btn icon="mdi-dots-vertical"></v-btn>
       </template>
+      <Clock />
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" app>
       <v-list nav>
@@ -44,3 +35,14 @@ const toggleDrawer = () => {
     </v-navigation-drawer>
   </div>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+import Clock from '@/components/shared/ClockComponent.vue';
+
+const drawer = ref(false);
+
+const toggleDrawer = () => {
+  drawer.value = !drawer.value;
+};
+</script>
