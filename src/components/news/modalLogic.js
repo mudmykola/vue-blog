@@ -3,6 +3,7 @@ import { ref, onMounted } from 'vue';
 export const posts = ref([]);
 export const modal = ref(false);
 export const selectedPost = ref({});
+export const favoritePosts = ref([]);
 
 export const fetchPosts = async () => {
   try {
@@ -13,7 +14,8 @@ export const fetchPosts = async () => {
       likes: 0,
       dislikes: 0,
       liked: false,
-      disliked: false
+      disliked: false,
+      favorite: false
     }));
   } catch (error) {
     console.error('Error fetching posts:', error);
@@ -61,5 +63,20 @@ export const dislike = (postId) => {
   } else {
     post.dislikes--;
     post.disliked = false;
+  }
+};
+
+export const toggleFavorite = (postId) => {
+  const post = posts.value.find(post => post.id === postId);
+  if (post) {
+    post.favorite = !post.favorite;
+    if (post.favorite) {
+      favoritePosts.value.push(post);
+    } else {
+      const index = favoritePosts.value.findIndex(p => p.id === postId);
+      if (index !== -1) {
+        favoritePosts.value.splice(index, 1);
+      }
+    }
   }
 };
